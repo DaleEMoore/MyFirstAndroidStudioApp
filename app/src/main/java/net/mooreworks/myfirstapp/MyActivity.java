@@ -33,6 +33,8 @@
  * Mon Sep 21 13:06:13 CDT 2015
  * I stopped this project because the next step, the Action Bar, seems to be incomplete and take
  * lots of mastry to complete the code examples. I'm going to go looking for a different tutorial.
+ *
+ * I wonder if any of them are tutorials? GitHub.com search "android studio" tutorial shows 95.
  */
 
 package net.mooreworks.myfirstapp;
