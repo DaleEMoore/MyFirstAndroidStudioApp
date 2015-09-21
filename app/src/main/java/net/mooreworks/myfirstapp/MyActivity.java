@@ -8,6 +8,9 @@
  *  http://www.lirent.net/2013/05/android-studio-keyboard-shortcuts/
  *
  * TODO (list):
+ * I stopped this project because the next step, the Action Bar, seems to be incomplete and take
+ * lots of mastry to complete the code examples. I'm going to go looking for a different tutorial.
+ *
  * Continue the tutorial: https://developer.android.com/training/basics/actionbar/index.html
  *
  * Figure out AS documentation. How do I do my historic infoSubject.txt files in AS?
@@ -27,6 +30,9 @@
  * Mon Sep 14 06:38:36 CDT 2015
  * Created
  *
+ * Mon Sep 21 13:06:13 CDT 2015
+ * I stopped this project because the next step, the Action Bar, seems to be incomplete and take
+ * lots of mastry to complete the code examples. I'm going to go looking for a different tutorial.
  */
 
 package net.mooreworks.myfirstapp;
@@ -35,6 +41,7 @@ import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -63,11 +70,27 @@ public class MyActivity extends ActionBarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_my, menu);
-        return true;
+        // Inflate the menu items for use in the action bar
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_activity_actions, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        switch (item.getItemId()) {
+            case R.id.action_search:
+                openSearch();
+                return true;
+            case R.id.action_settings:
+                openSettings();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+    /*
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -82,4 +105,5 @@ public class MyActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    */
 }
